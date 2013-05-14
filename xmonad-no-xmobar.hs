@@ -16,11 +16,10 @@ nManageHook = composeAll . concat $
               ,[ className =? c --> doShift "7:web" | c <- browsers ]
               ,[ className =? c --> doShift "8:irc" | c <- irc ]
               ] where floats = ["CMake"]
-                      browsers = ["Konqueror","Firefox"]
+                      browsers = ["Firefox"]
                       irc = ["Quassel"]
 
 main = do
-  xmproc <- spawnPipe "/usr/bin/xmobar /home/nen/.xmonad/xmobar.hs"
   xmonad $ defaultConfig {
     modMask = mod4Mask
     ,terminal = "xterm"
@@ -30,14 +29,10 @@ main = do
     ,workspaces = nWorkspaces
     ,manageHook = nManageHook <+> manageHook defaultConfig
     ,layoutHook = avoidStruts  $  layoutHook defaultConfig
-    ,logHook = dynamicLogWithPP xmobarPP {
-                        ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "green" "" . shorten 50
-                        }
     } `additionalKeys`  
       [(( mod4Mask .|. shiftMask, xK_F4), spawn "sudo shutdown -h now")--win+Shift+F4
       ,(( mod4Mask, xK_j ), sendMessage Expand) -- win + L is logout for windows
-      ,((mod4Mask, xK_F1 ), spawn "konsole")
-      ,((mod4Mask, xK_F2 ), spawn "kate")
+      ,((mod4Mask, xK_F1 ), spawn "urxvt")
+      ,((mod4Mask, xK_F2 ), spawn "emacsclient -c -a")
       ,((0, xK_Print), spawn "scrot")
       ]
