@@ -19,6 +19,10 @@ nManageHook = composeAll . concat $
                       trash = [""]
                       irc = ["Quassel"]
 
+startup :: X()
+startup = do
+        spawn "konsole"
+
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/nen/.xmonad/xmobar.hs"
   xmonad $ defaultConfig {
@@ -30,6 +34,7 @@ main = do
     ,workspaces = nWorkspaces
     ,manageHook = nManageHook <+> manageHook defaultConfig
     ,layoutHook = avoidStruts  $  layoutHook defaultConfig
+    ,startupHook = startup
     ,logHook = dynamicLogWithPP xmobarPP {
                         ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
