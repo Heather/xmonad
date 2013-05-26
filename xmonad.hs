@@ -21,7 +21,8 @@ nManageHook = composeAll . concat $
 
 startup :: X()
 startup = do
-        spawn "konsole"
+        -- spawn "konsole"
+        spawn "xsetroot -cursor_name left_ptr"
 
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/nen/.xmonad/xmobar.hs"
