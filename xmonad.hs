@@ -49,5 +49,6 @@ main = do
       ,((mod4Mask, xK_F4 ), spawn "google-chrome")
       ,((mod4Mask, xK_F5 ), spawn "kdevelop")
       ,((mod4Mask, xK_F9 ), spawn "quasselclient")
+      ,((mod4Mask, xK_F10 ),spawn "steam")
       ,((0, xK_Print), spawn "scrot")
       ]
