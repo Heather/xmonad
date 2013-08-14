@@ -13,9 +13,11 @@ nWorkspaces = ["1:root","2:user","3","4:dev","5:dev","6","7","8:irc","9:web"]
 nManageHook = composeAll . concat $
               [[ className =? "KDevelop" --> doShift "4:dev", isFullscreen --> doFullFloat]
               ,[ className =? c --> doFloat | c <- floats ]
+              ,[ className =? c --> doFullFloat | c <- fullscreens ]
               ,[ className =? c --> doShift "8:irc" | c <- irc ]
               ,[ className =? c --> doShift "9:web" | c <- web ]
               ] where floats = ["Xmessage", "steam", "Steam"]
+                      fullscreens = ["Dota"]
                       irc = ["Quassel"]
                       web = ["google-chrome"]
 
