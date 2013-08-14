@@ -13,6 +13,7 @@ nWorkspaces = ["1:root","2:user","3","4:dev","5:dev","6","7","8:irc","9:web"]
 nManageHook = composeAll . concat $
               [[ className =? "KDevelop" --> doShift "4:dev", isFullscreen --> doFullFloat]
               ,[ className =? "Trayer" --> doIgnore]
+              ,[ resource  =? "trayer" --> doIgnore]
               ,[ className =? c --> doFloat | c <- floats ]
               ,[ className =? c --> doShift "8:irc" | c <- irc ]
               ,[ className =? c --> doShift "9:web" | c <- web ]
