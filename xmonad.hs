@@ -11,7 +11,9 @@ import System.IO
 
 nWorkspaces = ["1:root","2:user","3","4:dev","5:dev","6","7","8:irc","9:web"]
 nManageHook = composeAll . concat $
-              [[ className =? "KDevelop" --> doShift "4:dev", isFullscreen --> doFullFloat]
+              [[ className =? "KDevelop" --> doShift "4:dev"]
+              ,[ className =? "Monodevelop" --> doShift "5:dev"]
+              ,[ className =? "Steam" --> doShift "2:user"]
               ,[ className =? c --> doIgnore | c <- ignore ]
               ,[ className =? c --> doFloat | c <- floats ]
               ,[ className =? c --> doShift "8:irc" | c <- irc ]
@@ -23,9 +25,7 @@ nManageHook = composeAll . concat $
                       web = ["google-chrome"]
 
 startup :: X()
-startup = do
-        -- spawn "konsole"
-        spawn "xsetroot -cursor_name left_ptr"
+startup = spawn "xsetroot -cursor_name left_ptr"
 
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/nen/.xmonad/xmobar.hs"
@@ -49,6 +49,7 @@ main = do
       ,((mod4Mask, xK_F1 ), spawn "konsole")
       ,((mod4Mask, xK_F4 ), spawn "google-chrome")
       ,((mod4Mask, xK_F5 ), spawn "kdevelop")
+      ,((mod4Mask, xK_F6 ), spawn "monodevelop")
       ,((mod4Mask, xK_F9 ), spawn "quasselclient")
       ,((mod4Mask, xK_F10 ),spawn "steam")
       ,((0, xK_Print), spawn "scrot")
