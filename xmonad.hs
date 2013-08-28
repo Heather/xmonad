@@ -47,7 +47,8 @@ main = do
     } `additionalKeys`  
       [(( mod4Mask .|. shiftMask, xK_F4), spawn "sudo shutdown -h now")--win+Shift+F4
       ,(( mod4Mask, xK_j ), sendMessage Expand) -- win + L is logout for windows
-      ,((mod4Mask, xK_F1 ), spawn "konsole")
+      ,((mod4Mask, xK_F1 ), spawn "gnome-terminal")
+      ,((mod4Mask, xK_F2 ), spawn "konsole")
       ,((mod4Mask, xK_F4 ), spawn "google-chrome")
       ,((mod4Mask, xK_F5 ), spawn "kdevelop")
       ,((mod4Mask, xK_F6 ), spawn "monodevelop")
