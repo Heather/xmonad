@@ -1,4 +1,4 @@
-Config { font = "xft:Helvetica-12"
+Config { font = "xft:Helvetica-14"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 80
