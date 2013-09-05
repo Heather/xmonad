@@ -31,6 +31,8 @@ nManageHook = composeAll . concat $
 startup :: X()
 startup = do
     spawn "xsetroot -cursor_name left_ptr"
+    spawn "VBoxClient-all"
+    spawn "gnome-terminal"
 
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/nen/.xmonad/xmobar.hs"
