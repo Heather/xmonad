@@ -23,7 +23,7 @@ nManageHook = composeAll . concat $
               ,[ className =? c --> doShift "8:irc" | c <- irc ]
               ,[ className =? c --> doShift "9:web" | c <- web ]
               ,[ isFullscreen --> doFullFloat ]
-              ] where ignore = ["panel", "Trayer"]
+              ] where ignore = ["panel", "Trayer", "trayer"]
                       floats = ["Xmessage", "Steam"]
                       irc = ["Empathy"]
                       web = ["Google-chrome"]
@@ -31,7 +31,6 @@ nManageHook = composeAll . concat $
 startup :: X()
 startup = do
     spawn "xsetroot -cursor_name left_ptr"
-    --spawn "VBoxClient-all"
     spawn "gnome-terminal"
 
 main = do
