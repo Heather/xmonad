@@ -33,6 +33,13 @@ startup = do
     spawn "xsetroot -cursor_name left_ptr"
     spawn "gnome-terminal"
 
+layout = Full ||| tiled ||| Mirror tiled
+  where
+     tiled   = Tall nmaster delta ratio
+     nmaster = 1
+     ratio   = 1/2
+     delta   = 3/100
+
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaultConfig {
@@ -43,7 +50,7 @@ main = do
     ,focusedBorderColor = "#000000"
     ,workspaces = nWorkspaces
     ,manageHook = nManageHook <+> manageHook defaultConfig
-    ,layoutHook = avoidStruts  $  layoutHook defaultConfig
+    ,layoutHook = avoidStruts  $  layout
     ,startupHook = startup
     ,logHook = dynamicLogWithPP xmobarPP {
                         ppOutput = hPutStrLn xmproc
