@@ -13,7 +13,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Util.Run(spawnPipe)
 import System.IO
 
-nWorkspaces = ["1:root","2:user","3","4:dev","5:dev","6","7","8:irc","9:web"]
+nWorkspaces = ["1","2","3","4","5","6","7","8","9:Trash"]
 nManageHook = composeAll . concat $
               [[ className =? "Anjuta" --> doShift "4:dev"]
               ,[ className =? "Monodevelop" --> doShift "5:dev"]
