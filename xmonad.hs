@@ -1,5 +1,5 @@
 {-|        Light Gnomish Xmonad config
-         Copyright (C)  2012-2013 Heather
+         Copyright (C)  2012-2014 Heather
 --}
 
 import XMonad
@@ -53,8 +53,8 @@ main = do
     ,layoutHook = avoidStruts  $  layout
     ,startupHook = startup
     ,logHook = dynamicLogWithPP xmobarPP {
-                        ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "green" "" . shorten 50
+                        	ppOutput 	= hPutStrLn xmproc
+                        , 	ppTitle 	= xmobarColor "green" "" . shorten 50
                         }
     } `additionalKeys`  
       [(( mod4Mask .|. shiftMask, xK_F4), spawn "sudo shutdown -h now")--win+Shift+F4
