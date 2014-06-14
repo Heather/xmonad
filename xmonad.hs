@@ -25,8 +25,8 @@ nManageHook = composeAll . concat $
               ,[ isFullscreen --> doFullFloat ]
               ] where ignore = ["panel", "Trayer", "trayer"]
                       floats = ["Xmessage", "Steam"]
-                      irc = ["Empathy"]
-                      web = ["Google-chrome"]
+                      irc = ["Pidgin"]
+                      web = ["Firefox"]
 
 startup :: X()
 startup = do
@@ -59,11 +59,15 @@ main = do
     } `additionalKeys`  
       [(( mod4Mask .|. shiftMask, xK_F4), spawn "sudo shutdown -h now")--win+Shift+F4
       ,(( mod4Mask, xK_j ), sendMessage Expand) -- win + L is logout for windows
+
       ,((mod4Mask, xK_F1 ), spawn "gnome-terminal")
-      ,((mod4Mask, xK_F4 ), spawn "google-chrome-beta")
+      ,((mod4Mask, xK_F4 ), spawn "firefox-bin")
+
       ,((mod4Mask, xK_F5 ), spawn "anjuta")
       ,((mod4Mask, xK_F6 ), spawn "monodevelop")
-      ,((mod4Mask, xK_F9 ), spawn "empathy")
+
+      ,((mod4Mask, xK_F9 ), spawn "pidgin")
       ,((mod4Mask, xK_F10 ),spawn "steam")
+
       ,((0, xK_Print), spawn "scrot")
       ]
