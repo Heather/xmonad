@@ -26,7 +26,7 @@ nManageHook = composeAll . concat $
               ] where ignore = ["panel", "Trayer", "trayer"]
                       floats = ["Xmessage", "Steam"]
                       irc = ["Pidgin"]
-                      web = ["Firefox"]
+                      web = ["Firefox", "Chrome"]
 
 startup :: X()
 startup = do
