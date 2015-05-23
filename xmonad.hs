@@ -20,13 +20,13 @@ nManageHook = composeAll . concat $
               ,[ className =? "Steam" --> doShift "2:user"]
               ,[ className =? c --> doIgnore | c <- ignore ]
               ,[ className =? c --> doFloat | c <- floats ]
-              ,[ className =? c --> doShift "8:irc" | c <- irc ]
-              ,[ className =? c --> doShift "9:web" | c <- web ]
+              ,[ className =? c --> doShift "4:irc" | c <- irc ]
+              ,[ className =? c --> doShift "3:web" | c <- web ]
               ,[ isFullscreen --> doFullFloat ]
               ] where ignore = ["panel", "Trayer", "trayer"]
                       floats = ["Xmessage", "Steam"]
                       irc = ["Pidgin"]
-                      web = ["Firefox", "Chrome"]
+                      web = ["Chrome"]
 
 startup :: X()
 startup = do
@@ -61,9 +61,7 @@ main = do
       ,(( mod4Mask, xK_j ), sendMessage Expand) -- win + L is logout for windows
 
       ,((mod4Mask, xK_F1 ), spawn "gnome-terminal")
-      ,((mod4Mask, xK_F4 ), spawn "firefox-bin")
-
-      ,((mod4Mask, xK_F5 ), spawn "anjuta")
+      ,((mod4Mask, xK_F4 ), spawn "chromium")
       ,((mod4Mask, xK_F6 ), spawn "monodevelop")
 
       ,((mod4Mask, xK_F9 ), spawn "pidgin")
