@@ -19,7 +19,7 @@ nWorkspaces = ["1","2","3","4","5","6","7","8","9:Trash"]
 startup :: X()
 startup = do
     spawn "xsetroot -cursor_name left_ptr"
-    spawn "gnome-terminal"
+    spawn "konsole"
 
 layout = Full ||| tiled ||| Mirror tiled
   where
@@ -31,7 +31,7 @@ layout = Full ||| tiled ||| Mirror tiled
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaultConfig {
-    modMask = controlMask -- .|. mod4Mask
+    modMask = mod4Mask -- controlMask -- .|. 
     ,terminal = "xterm"
     ,borderWidth = 1
     ,normalBorderColor = "#fbc1f3"
