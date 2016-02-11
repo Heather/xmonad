@@ -1,4 +1,4 @@
-module Eather.Keys 
+module Ether.Keys 
   ( myKeyBindings
   --, (<~|)
   ) where
@@ -23,9 +23,9 @@ myKeyBindings =
   [(( mod4Mask .|. shiftMask, xK_F4), spawn "sudo shutdown -h now")--win+Shift+F4
   ,(( mod4Mask, xK_j ), sendMessage Expand) -- win + L is logout for windows
 
-  ,((mod4Mask, xK_F1 ), spawn "konsole")
+  ,((mod4Mask, xK_F1 ), spawn "terminal")
   ,((mod4Mask, xK_F4 ), spawn "chromium")
-  ,((mod4Mask, xK_F6 ), spawn "kdevelop")
+  ,((mod4Mask, xK_F6 ), spawn "qtcreator")
 
   ,((mod4Mask, xK_F9 ), spawn "pidgin")
   ,((mod4Mask, xK_F10 ),spawn "steam")

@@ -1,5 +1,5 @@
 {-|           Light Xmonad config
-         Copyright (C)  2012-2015 Heather
+         Copyright (C)  2012-2016 Heather
 --}
 
 import XMonad
@@ -12,7 +12,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Util.Run(spawnPipe)
 import System.IO
 
-import Eather.Keys
+import Ether.Keys
 
 nWorkspaces = ["1","2","3","4","5","6","7","8","9:Trash"]
 
