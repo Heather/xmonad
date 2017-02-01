@@ -24,7 +24,6 @@ myKeyBindings =
   ,(( mod4Mask, xK_j ), sendMessage Expand) -- win + L is logout for windows
 
   ,((mod4Mask, xK_F1 ), spawn "gnome-terminal")
-  ,((mod4Mask, xK_F1 ), spawn "terminology")
   ,((mod4Mask, xK_F4 ), spawn "chromium")
   ,((mod4Mask, xK_F6 ), spawn "qtcreator")
   ,((mod4Mask, xK_F6 ), spawn "atom")
