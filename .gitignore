@@ -1,6 +1,7 @@
 *.hi
 *.o
 *.errors
+*.state
 
 /xmonad-i386-linux
 /xmonad-x86_64-linux
