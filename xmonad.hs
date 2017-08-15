@@ -1,7 +1,3 @@
-{-|           Light Xmonad config
-         Copyright (C)  2012-2016 Heather
---}
-
 import XMonad
 import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Hooks.ManageDocks
@@ -19,7 +15,7 @@ nWorkspaces = ["1","2","3","4","5","6","7","8","9:Trash"]
 startup :: X()
 startup = do
     spawn "xsetroot -cursor_name left_ptr"
-    spawn "konsole"
+    spawn "gnome-terminal"
 
 layout = Full ||| tiled ||| Mirror tiled
   where
