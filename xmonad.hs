@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Config.Desktop
 import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Hooks.ManageDocks
 
@@ -15,7 +16,7 @@ nWorkspaces = ["1","2","3","4","5","6","7","8","9:Trash"]
 startup :: X()
 startup = do
     spawn "xsetroot -cursor_name left_ptr"
-    spawn "gnome-terminal"
+    -- spawn "gnome-terminal"
 
 layout = Full ||| tiled ||| Mirror tiled
   where
@@ -26,9 +27,9 @@ layout = Full ||| tiled ||| Mirror tiled
 
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
-  xmonad $ defaultConfig {
+  xmonad $ desktopConfig {
     modMask = mod4Mask -- controlMask -- .|. 
-    ,terminal = "xterm"
+    ,terminal = "gnome-terminal"
     ,borderWidth = 1
     ,normalBorderColor = "#fbc1f3"
     ,focusedBorderColor = "#000000"

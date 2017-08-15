@@ -1,5 +1,5 @@
 Config { font = "xft:Helvetica-14"
-       , bgColor = "black"
+       , bgColor = "#262626"
        , fgColor = "grey"
        , position = TopW L 95
        , commands = [
