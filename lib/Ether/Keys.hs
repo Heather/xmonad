@@ -25,7 +25,7 @@ myKeyBindings =
 
   ,((mod4Mask, xK_F1 ), spawn "gnome-terminal")
   ,((mod4Mask, xK_F4 ), spawn "chromium")
-  ,((mod4Mask, xK_F6 ), spawn "qtcreator")
+  ,((mod4Mask, xK_F5 ), spawn "qtcreator")
   ,((mod4Mask, xK_F6 ), spawn "atom")
 
   ,((mod4Mask, xK_F9 ), spawn "pidgin")
