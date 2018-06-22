@@ -8,6 +8,7 @@ import XMonad.Hooks.SetWMName
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.Cursor
 import System.IO
 
 import Ether.Keys
@@ -16,7 +17,7 @@ nWorkspaces = ["1","2","3","4","5","6","7","8","9:Trash"]
 
 startup ∷ X()
 startup = -- do
-    spawn "xsetroot -cursor_name left_ptr"
+    setDefaultCursor xC_left_ptr
     -- spawn "gnome-terminal"
 
 layout = Full ||| tiled ||| Mirror tiled
