@@ -15,7 +15,7 @@ import Ether.Keys
 
 nWorkspaces = ["1","2","3","4","5","6","7","8","9:Trash"]
 
-startup ∷ X()
+startup ∷ X()		
 startup = -- do
     setDefaultCursor xC_left_ptr
     -- spawn "gnome-terminal"
@@ -33,7 +33,7 @@ main = do
     modMask = mod4Mask -- controlMask -- .|.
     ,terminal = "gnome-terminal"
     ,borderWidth = 1
-    ,normalBorderColor = "#fbc1f3"
+    ,normalBorderColor = "#000000"
     ,focusedBorderColor = "#000000"
     ,workspaces = nWorkspaces
     ,layoutHook = avoidStruts layout
